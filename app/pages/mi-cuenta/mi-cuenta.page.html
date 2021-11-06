@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"
+      text="Atrás"
+      color="primary"
+      mode="ios">
+    </ion-back-button>
+    </ion-buttons>
+    <ion-title>mi-cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label >Nombre </ion-label>
+    <ion-input id="nombreprueba" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label >Apellido </ion-label>
+    <ion-input id="apellidoprueba" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label >Correo</ion-label>
+    <ion-input id="correoprueba" type="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label >Contraseña </ion-label>
+    <ion-input id="passprueba" type="password" ></ion-input>
+  </ion-item>
+
+  <ion-button (click)="cambiar()">
+    Cambiar
+  </ion-button>
+  <ion-button (click)="borrar()">
+    Borrar
+  </ion-button>
+
+  
+</ion-content>

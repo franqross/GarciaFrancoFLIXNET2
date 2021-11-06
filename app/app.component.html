@@ -1,0 +1,61 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+
+
+        <!--Avatar de menu-->
+        <ion-buttons slot="start"> 
+          <ion-avatar>
+             <ion-img src="/assets/user.png"></ion-img>
+          </ion-avatar>  
+        </ion-buttons>
+        <!--//Avatar de menu-->
+        
+        <!--Nombre de usuario-->
+        
+        <ion-buttons slot="start">
+          <ion-text color="light">
+            <label id="usuarionombre"></label>
+          </ion-text>
+        </ion-buttons>
+        <!--//Nombre de usuario-->
+
+        <!--Registro de menu-->
+        
+        <ion-buttons slot="end">
+          <ion-button  (click)="cuenta()" color="light" mode="ios"><ion-icon name="log-in-outline"></ion-icon><h6> Mi cuenta</h6></ion-button>
+        </ion-buttons>
+        <!--//Registro de menu -->   
+        
+
+
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let c of componentes">
+          <ion-item [routerLink]="c.redirecTo" detail=false 
+                    >
+          <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
+          {{ c.name }}
+        </ion-item>
+        </ion-menu-toggle>
+        
+        <ion-menu-toggle auto-hide="false">
+          <ion-item (click)="salir()"  detail=false 
+                    lines="none">
+          <ion-icon [name]="'exit-outline'" slot="start" color="primary"></ion-icon>
+          <ion-label>Salir</ion-label>
+        </ion-item>
+        </ion-menu-toggle>
+      
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

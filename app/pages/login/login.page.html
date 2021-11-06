@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="formularioLogin">
+    <ion-item>
+      <ion-label class="EMAIL" position="floating">E-Mail </ion-label>
+      <ion-input required formControlName="correo" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input required formControlName="password" type="password"></ion-input>
+    </ion-item>
+    </form>
+    <br>
+    <br>
+    <ion-button shape="block" (click)="ingresar()">
+      
+      Ingresar
+    </ion-button>
+
+    
+
+    <ion-footer>
+      
+        
+          <ion-button shape="block" [routerLink]="['/registro']">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Registrarse
+          </ion-button>
+        
+        
+     
+    </ion-footer>
+  
+
+
+</ion-content>

@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"
+      text="Atrás"
+      color="primary"
+      mode="ios">
+    </ion-back-button>
+    </ion-buttons>
+    <ion-title><ion-icon name="log-in-outline"></ion-icon> Registro</ion-title>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+
+  <!--
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input type="text" placeholder=""
+    name="nombre" [(ngModel)]= "usuario.nombre"
+    required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input type="text" placeholder=""
+    name="apellido" [(ngModel)]= "usuario.apellido"
+    required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" required>Fecha de nacimiento</ion-label>
+    <ion-datetime value="" min="1920-01" max="2011"
+      [dayShortNames]="customDayShortNames"
+      displayFormat="DD MMM, YYYY"
+      monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic" name="nacimiento" [(ngModel)]= "usuario.nacimiento"
+      required></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Genero</ion-label>
+    <ion-select placeholder="Seleccione uno" name="nacimiento" [(ngModel)]= "usuario.genero"
+    required>
+      <ion-select-option value="F">Femenino</ion-select-option>
+      <ion-select-option value="M">Masculino</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  
+  
+
+    
+    <ion-list-header>
+       <ion-label>Formulario Válido: {{formulario.valid}} </ion-label> 
+    </ion-list-header> 
+    
+
+    <ion-item>
+      <ion-label position="floating">Correo Electronico </ion-label>
+      <ion-input type="email" placeholder=""
+                 name="email" [(ngModel)]= "usuario.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password </ion-label>
+      <ion-input type="password" placeholder="Contraseña"
+                 name="password" [(ngModel)]= "usuario.password"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button [disabled] ="formulario.invalid"
+        type="submit" expand="block" routerLink="/inicio">
+      Enviar Datos
+    </ion-button>
+
+
+  </form>
+-->
+
+
+<form [formGroup]="formularioRegistro">
+  <ion-item>
+    <ion-label position="floating">Nombre </ion-label>
+    <ion-input required formControlName="nombre" 
+               type="text" placeholder="">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Apellido </ion-label>
+    <ion-input required formControlName="apellido" 
+               type="text" placeholder="">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">E-Mail </ion-label>
+    <ion-input required formControlName="correo" 
+               type="email" placeholder=""
+               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña </ion-label>
+    <ion-input required formControlName="password" 
+               type="password" placeholder=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Confirmar Contraseña</ion-label>
+    <ion-input required formControlName="confPassword" type="password"></ion-input>
+  </ion-item>
+  <ion-button (click)="guardar()">
+    Registrar
+  </ion-button>
+</form>
+
+
+
+</ion-content>
